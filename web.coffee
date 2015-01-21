@@ -54,7 +54,7 @@ postToSlack = (chat_string) ->
     'Content-Type': 'application/json'
   options =
     url     : "https://hooks.slack.com/services/#{constants.slack_api_token}"
-    payload : data
+    JSON    : data
     headers : headers
   callback = ->
   request options, callback
