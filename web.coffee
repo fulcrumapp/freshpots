@@ -46,10 +46,11 @@ processPayload = (payload) ->
 
 postToSlack = (chat_string) ->
   data =
-    channel    : '#hq'
-    username   : 'coffeebot'
-    icon_emoji : ':coffee:'
-    text       : chat_string
+    payload:
+      channel    : '#hq'
+      username   : 'coffeebot'
+      icon_emoji : ':coffee:'
+      text       : chat_string
   headers =
     'Content-Type': 'application/json'
   options =
