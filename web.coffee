@@ -37,7 +37,7 @@ processPayload = (payload) ->
   coffee_type     = payload.data.form_values[constants.form_keys.coffee_type]
   brewing_status  = payload.data.form_values[constants.form_keys.brewing_status]
 
-  if brewing_status is "brewing"
+  if brewing_status is 'brewing'
     chat_string = "Fresh pots! #{person} just brewed some #{coffee_type} coffee.  Give it a couple of minutes before you make a run for it."
   else
     chat_string = "Fresh pots! #{person} brewed some #{coffee_type} coffee, and it's ready to drink."
@@ -46,16 +46,15 @@ processPayload = (payload) ->
 
 postToSlack = (chat_string) ->
   data =
-    payload:
-      channel    : '#hq'
-      username   : 'coffeebot'
-      icon_emoji : ':coffee:'
-      text       : chat_string
+    channel    : '#hq'
+    username   : 'coffeebot'
+    icon_emoji : ':coffee:'
+    text       : chat_string
   headers =
     'Content-Type': 'application/json'
   options =
     url     : "https://hooks.slack.com/services/#{constants.slack_api_token}"
-    json    : data
+    payload : data
     headers : headers
   callback = ->
   request options, callback
