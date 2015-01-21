@@ -2,7 +2,7 @@
   "name": "FreshPots",
   "version": "1.0.0",
   "description": "Post notification to Slack when fresh coffee is brewed.",
-  "main": "index.js",
+  "main": "index.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
