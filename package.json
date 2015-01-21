@@ -2,7 +2,7 @@
   "name": "FreshPots",
   "version": "1.0.0",
   "description": "Post notification to Slack when fresh coffee is brewed.",
-  "main": "index.coffee",
+  "main": "web.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,6 @@
     "Slack"
   ],
   "author": "Jeremy Pastika",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jpastika/freshpots/issues"
   },
