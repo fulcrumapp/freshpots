@@ -47,7 +47,7 @@ processPayload = (payload) ->
 postToSlack = (chat_string) ->
   data =
     channel    : '#hq'
-    username   : 'freshpotsbot'
+    username   : 'coffeebot'
     icon_emoji : ':coffee:'
     text       : chat_string
   headers =
