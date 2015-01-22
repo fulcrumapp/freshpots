@@ -60,6 +60,6 @@ postToSlack = (chat_string) ->
     JSON    : data
     headers : headers
 
-  console.log data
-  request options, (err, res, body) ->
-    console.log body if body
+  console.log options.url
+  callback = ->
+  request options, callback
