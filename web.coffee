@@ -53,7 +53,7 @@ postToSlack = (chat_string) ->
   headers =
     'Content-Type': 'application/json'
   options =
-    url     : "https://hooks.slack.com/services/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"
+    url     : "https://hooks.slack.com/services/#{constants.slack_webhook_id}"
     json    : data
     headers : headers
 
