@@ -33,6 +33,8 @@ processPayload = (payload) ->
     console.log 'Ignoring webhook because type was not record.create'
     return
 
+  console.log 'Processing webhook'
+
   person          = payload.data.created_by
   coffee_type     = payload.data.form_values[constants.form_keys.coffee_type]
   brewing_status  = payload.data.form_values[constants.form_keys.brewing_status]
@@ -42,6 +44,7 @@ processPayload = (payload) ->
   else
     chat_string = "Fresh pots! #{person} brewed some #{coffee_type} coffee, and it's ready to drink."
 
+  console.log chat_string
   postToSlack chat_string
 
 postToSlack = (chat_string) ->
