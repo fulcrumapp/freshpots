@@ -62,4 +62,4 @@ postToSlack = (chat_string) ->
 
   console.log data
   request options, (err, res, body) ->
-    console.log err if err
+    console.log body if body
