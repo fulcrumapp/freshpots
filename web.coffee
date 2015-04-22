@@ -38,9 +38,9 @@ processPayload = (payload) ->
   brewing_status  = payload.data.form_values[constants.form_keys.brewing_status]
 
   if brewing_status is 'brewing'
-    chat_string = ":coffee: :zap: Fresh pot! #{person} started brewing some #{coffee_type} coffee.  Give it a couple of minutes before you make a run for it."
+    chat_string = "Fresh pot! #{person} started brewing some #{coffee_type} coffee.  Give it a couple of minutes before you make a run for it."
   else
-    chat_string = ":coffee: :zap: Fresh pot! #{person} brewed some #{coffee_type} coffee, and it's ready to drink."
+    chat_string = "Fresh pot! #{person} brewed some #{coffee_type} coffee, and it's ready to drink."
 
   postToSlack chat_string
 
