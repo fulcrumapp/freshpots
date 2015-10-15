@@ -10,7 +10,7 @@ port = Number process.env.PORT or 5000
 app = express()
 
 app.use logfmt.requestLogger()
-app.use bodyParser.json()
+app.use bodyParser.json({limit: '10mb'})
 app.use bodyParser.urlencoded()
 
 app.get '/', (req, res) ->
