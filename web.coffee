@@ -42,9 +42,10 @@ processPayload = (payload) ->
   else
     chat_string = "Fresh pot! #{person} brewed some #{coffee_type} coffee, and it's ready to drink."
 
-  postToSlack chat_string
+  for slack_webhook_id in constants.slack_webhook_ids.split(',')
+    postToSlack(chat_string, slack_webhook_id)
 
-postToSlack = (chat_string) ->
+postToSlack = (chat_string, slack_webhook_id) ->
   data =
     channel    : '#hq'
     username   : 'coffeebot'
@@ -53,7 +54,7 @@ postToSlack = (chat_string) ->
   headers =
     'Content-Type': 'application/json'
   options =
-    url     : "https://hooks.slack.com/services/#{constants.slack_webhook_id}"
+    url     : "https://hooks.slack.com/services/#{slack_webhook_id}"
     json    : data
     headers : headers
 
